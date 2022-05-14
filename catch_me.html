@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Catch me</title>
+
+	<style type="text/css">
+		#box{
+			height: 70px;
+			width: 70px;
+			background-color: purple;
+			position: absolute;
+		}
+		#box p{
+			position: relative;
+			color: white;
+			text-align: center;
+			margin: 20px 0;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="box">
+		<p>Catch me</p>
+	</div>
+
+
+<script type="text/javascript">
+
+var box = document.getElementById('box');
+
+box.addEventListener('mouseover',function(event){
+    var boxAttr = box.getBoundingClientRect();
+    var boxHeight = boxAttr.height;
+    var boxWidth = boxAttr.width;
+    var pos = getNewPos(boxHeight,boxWidth);  
+    box.style.left = pos.x + 'px';
+    box.style.top = pos.y + 'px';
+});
+
+function getNewPos(boxHeight,boxWidth){
+	    var viewWidth = window.innerWidth;
+        var viewHeight = window.innerHeight;
+    	var newX = Math.floor((Math.random() * viewWidth)+1 - boxWidth);
+    	var newY = Math.floor((Math.random() * viewHeight)+1 - boxHeight);
+    	if(newX < 0) {
+        newX = 0;
+    }
+    if(newY < 0) {
+        newY = 0;
+    }
+    
+    return {x: newX, y: newY};
+    };
+
+</script>
+
+</body>
+</html>

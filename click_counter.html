@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Count</title>
+    <style type="text/css">
+        * {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#box {
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    margin: 10% auto;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+	<div id="box"></div>
+    <p>
+        Box clicked <span id="count">0</span> times
+    </p>
+    <script type="text/javascript">
+    var box = document.getElementById('box');
+    var count = document.getElementById('count');
+    var i=0;
+    function counter(){
+      i++;
+      console.log(count)
+      count.innerText = i+"";
+    }
+    box.addEventListener('click',counter)
+
+
+
+
+    </script>
+</body>
+</html>

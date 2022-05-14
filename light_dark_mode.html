@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Mode</title>
+<style type="text/css">
+	#toggle{
+       height: 20px;
+       width: 40px;
+       background-color: white;
+       margin: 100px auto;
+       border: 1px solid black;
+       border-radius: 20px;
+	}
+	#circle{
+		height: 20px;
+		width: 20px;
+		border-radius: 100%;
+		background-color: black;
+	}
+	h1{
+		text-align: center;
+	}
+	.text-color{
+		color: white;
+	}
+	.bg-color{
+		background-color: black;
+	}
+</style>
+</head>
+<body>
+
+	<div id="toggle">
+		<div id="circle">
+			
+		</div>
+	</div>
+
+	<h1>Cick On The Toggle Button</h1>
+
+<script type="text/javascript">
+	var toggled = false;
+	var h1Tag = document.getElementsByTagName("h1")[0];
+	var bodyTag = document.getElementsByTagName("body")[0];
+	document.getElementById("toggle").addEventListener("click",function(){
+		if(!toggled){
+		h1Tag.classList.add("text-color");
+		bodyTag.classList.add("bg-color");
+		circle.style.marginLeft = "20px";
+		toggled = true;
+	    }else{
+	    h1Tag.classList.remove("text-color");
+		bodyTag.classList.remove("bg-color");
+		circle.style.marginLeft = "0px";
+		toggled = false;
+	    }
+	})
+</script>
+</body>
+</html>
